@@ -41,4 +41,11 @@ keywords:
   - "co-occurrence network"
   - "NCBI E-utilities"
   - "OpenAlex"
-# Added after the first Zenodo release: the DOI under "identifiers".
+doi: 10.5281/zenodo.24407062
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24407062
+    description: "Concept DOI: all versions of Meshlytics (resolves to the latest release)"
+  - type: doi
+    value: 10.5281/zenodo.24407063
+    description: "Version DOI: Meshlytics 1.0.0"

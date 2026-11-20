@@ -3,7 +3,7 @@
 [![CI](https://github.com/i3-research/meshlytics/actions/workflows/ci.yml/badge.svg)](https://github.com/i3-research/meshlytics/actions/workflows/ci.yml)
 ![Python 3.10 | 3.11 | 3.12](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)
 [![Licence: PolyForm Noncommercial 1.0.0](https://img.shields.io/badge/licence-PolyForm%20Noncommercial%201.0.0-lightgrey)](LICENSE)
-<!-- DOI badge: added after the first Zenodo release -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24407062.svg)](https://doi.org/10.5281/zenodo.24407062)
 
 **MeSH-hierarchy-aware analysis of PubMed literature.**
 
@@ -287,8 +287,14 @@ dependency versions, and the linter. Changes are listed in [CHANGELOG.md](CHANGE
 
 ## Citation
 
-If you use Meshlytics, please cite it as described in [CITATION.cff](CITATION.cff) (GitHub shows a "Cite this
-repository" button). <!-- Add the Zenodo DOI here after the first release. -->
+If you use Meshlytics, please cite the version you used. For version 1.0.0:
+
+> Kesri A, Perrier S, Grant PE, Morton SU, Ou Y. Meshlytics: MeSH-hierarchy-aware analysis of PubMed literature.
+> Version 1.0.0. Zenodo; 2026. https://doi.org/10.5281/zenodo.24407063
+
+Each release is archived on Zenodo. To cite all versions, use the concept DOI
+[10.5281/zenodo.24407062](https://doi.org/10.5281/zenodo.24407062), which always resolves to the latest release.
+The same information is in [CITATION.cff](CITATION.cff) (GitHub shows a "Cite this repository" button).
 
 ## Licence
 
