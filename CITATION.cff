@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use Meshlytics, please cite it as below."
+type: software
+title: "Meshlytics: MeSH-hierarchy-aware analysis of PubMed literature"
+version: 1.0.0
+date-released: "2026-11-20"
+authors:
+  - family-names: Kesri
+    given-names: Ankush
+    orcid: "https://orcid.org/0009-0003-4814-074X"
+    affiliation: "Boston Children's Hospital, Harvard Medical School"
+  - family-names: Perrier
+    given-names: Stefanie
+    affiliation: "Boston Children's Hospital, Harvard Medical School"
+  - family-names: Grant
+    given-names: P. Ellen
+    affiliation: "Boston Children's Hospital, Harvard Medical School"
+  - family-names: Morton
+    given-names: Sarah U.
+    affiliation: "Boston Children's Hospital, Harvard Medical School"
+  - family-names: Ou
+    given-names: Yangming
+    affiliation: "Boston Children's Hospital, Harvard Medical School"
+repository-code: "https://github.com/i3-research/meshlytics"
+license: PolyForm-Noncommercial-1.0.0
+abstract: >-
+  Meshlytics is a command-line tool that builds a literature dataset from PubMed and analyses its topics through
+  the Medical Subject Headings (MeSH) assigned to each paper. Every MeSH descriptor is placed at all of its
+  positions in the MeSH tree, so topics can be counted, filtered and compared at different levels of the
+  hierarchy and followed over time. It retrieves PubMed records for a list of PubMed IDs, for the papers citing
+  a set of cohort papers, or for the most cited papers of a journal, and produces MeSH category co-occurrence at
+  tree levels 1-3, topic trends, wordclouds, MeSH term, co-author and institution networks, and top journal,
+  author and institution summaries.
+keywords:
+  - "MeSH"
+  - "Medical Subject Headings"
+  - "PubMed"
+  - "bibliometrics"
+  - "literature analysis"
+  - "research trends"
+  - "co-occurrence network"
+  - "NCBI E-utilities"
+  - "OpenAlex"
+# Added after the first Zenodo release: the DOI under "identifiers".

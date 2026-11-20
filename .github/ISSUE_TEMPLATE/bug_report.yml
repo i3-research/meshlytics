@@ -1,0 +1,44 @@
+name: Bug report
+description: Something does not work as described
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Issues are public: do not include API keys, config.json, patient or participant
+        information, or confidential datasets. Public PubMed IDs and MeSH terms are fine.
+  - type: input
+    id: version
+    attributes:
+      label: Meshlytics version
+      description: Output of `meshlytics --version`
+      placeholder: meshlytics 1.0.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Python version and operating system
+      placeholder: Python 3.12, Windows 11
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command
+      description: The full command you ran
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened, and what did you expect?
+      description: Paste the error message or describe the unexpected output.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Data to reproduce (optional)
+      description: A few public PubMed IDs, or a small synthetic example, that show the problem.

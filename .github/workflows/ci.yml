@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint (ruff)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install ruff
+        run: python -m pip install "ruff==0.17.6"
+      - name: Lint
+        run: ruff check .
+
+  test:
+    name: Tests (${{ matrix.os }}, Python ${{ matrix.python-version }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install Meshlytics with test and LLM extras
+        run: python -m pip install ".[dev,llm]"
+      - name: Check the command-line entry point
+        run: |
+          meshlytics --version
+          meshlytics --help
+      - name: Run tests (offline)
+        run: python -m pytest -ra
+
+  minimum-versions:
+    name: Tests with the oldest supported dependencies (Python 3.10)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.10"
+      - name: Install Meshlytics with the lower bounds of every dependency
+        run: python -m pip install ".[dev,llm]" -c .github/constraints-min.txt
+      - name: Show installed versions
+        run: python -m pip list
+      - name: Run tests (offline)
+        run: python -m pytest -ra

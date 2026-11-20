@@ -1,0 +1,40 @@
+{
+  "title": "Meshlytics: MeSH-hierarchy-aware analysis of PubMed literature",
+  "upload_type": "software",
+  "description": "<p>Meshlytics is a command-line tool that builds a literature dataset from PubMed and analyses its topics through the Medical Subject Headings (MeSH) assigned to each paper. Every MeSH descriptor is placed at all of its positions in the MeSH tree, so topics can be counted, filtered and compared at different levels of the hierarchy and followed over time. It retrieves PubMed records for a list of PubMed IDs, for the papers citing a set of cohort papers, or for the most cited papers of a journal, and produces MeSH category co-occurrence at tree levels 1-3, topic trends, wordclouds, MeSH term, co-author and institution networks, and top journal, author and institution summaries.</p><p>The original workflow (reading cohort papers from an Excel workbook, fetching the papers citing each cohort paper, and storing them as one sheet per cohort) was designed by Yangming Ou and implemented by Ankush Kesri.</p>",
+  "creators": [
+    {
+      "name": "Kesri, Ankush",
+      "affiliation": "Boston Children's Hospital, Harvard Medical School",
+      "orcid": "0009-0003-4814-074X"
+    },
+    {
+      "name": "Perrier, Stefanie",
+      "affiliation": "Boston Children's Hospital, Harvard Medical School"
+    },
+    {
+      "name": "Grant, P. Ellen",
+      "affiliation": "Boston Children's Hospital, Harvard Medical School"
+    },
+    {
+      "name": "Morton, Sarah U.",
+      "affiliation": "Boston Children's Hospital, Harvard Medical School"
+    },
+    {
+      "name": "Ou, Yangming",
+      "affiliation": "Boston Children's Hospital, Harvard Medical School"
+    }
+  ],
+  "keywords": [
+    "MeSH",
+    "Medical Subject Headings",
+    "PubMed",
+    "bibliometrics",
+    "literature analysis",
+    "research trends",
+    "co-occurrence network",
+    "NCBI E-utilities",
+    "OpenAlex"
+  ],
+  "license": "polyform-noncommercial-1.0.0"
+}

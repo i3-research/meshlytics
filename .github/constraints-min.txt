@@ -1,0 +1,16 @@
+# Lower bounds of the dependencies in pyproject.toml, used by the "minimum-versions" CI job.
+# Keep in sync with pyproject.toml when a lower bound changes.
+pandas==2.2.*
+numpy==1.26.*
+requests==2.31.*
+biopython==1.83.*
+openpyxl==3.1.*
+ratelimit==2.2.*
+matplotlib==3.8.*
+scipy==1.11.*
+networkx==3.2.*
+adjustText==1.1.*
+wordcloud==1.9.*
+tqdm==4.66.*
+openai==1.30.*
+xlsxwriter==3.1.*

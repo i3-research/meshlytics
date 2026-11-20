@@ -1,0 +1,36 @@
+# Credentials: never commit real keys (use config.example.json as a template)
+config.json
+*.env
+.env
+
+# Analysis inputs and outputs (keep data out of the repository)
+*.xlsx
+*.xls
+*.csv
+*_pmids.txt
+*_skipped_pmids.txt
+*_fetch_log.txt
+Analysis_*/
+TopCited_*/
+# test fixtures are small, synthetic and allowed
+!tests/data/**
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

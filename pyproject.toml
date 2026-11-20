@@ -1,0 +1,88 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meshlytics"
+dynamic = ["version"]
+description = "MeSH-hierarchy-aware analysis of PubMed literature: fetch, filter and analyze MeSH-indexed papers and visualize research trends."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Ankush Kesri", email = "Ankush.Kesri@childrens.harvard.edu" },
+    { name = "Stefanie Perrier" },
+    { name = "P. Ellen Grant" },
+    { name = "Sarah U. Morton" },
+    { name = "Yangming Ou" },
+]
+maintainers = [
+    { name = "Ankush Kesri", email = "Ankush.Kesri@childrens.harvard.edu" },
+]
+license = "PolyForm-Noncommercial-1.0.0"
+license-files = ["LICENSE"]
+keywords = ["MeSH", "PubMed", "bibliometrics", "literature analysis", "research trends", "NCBI E-utilities"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+# Lower bounds: versions tested for v1.0.0; upper bounds: next major version
+dependencies = [
+    "pandas>=2.2,<4",
+    "numpy>=1.26,<3",
+    "requests>=2.31,<3",
+    "biopython>=1.83,<2",
+    "openpyxl>=3.1,<4",
+    "ratelimit>=2.2,<3",
+    "matplotlib>=3.8,<4",
+    "scipy>=1.11,<2",
+    "networkx>=3.2,<4",
+    "adjustText>=1.1,<2",
+    "wordcloud>=1.9,<2",
+    "tqdm>=4.66,<5",
+]
+
+[project.optional-dependencies]
+# institution-processing (standardised institution names with an OpenAI model)
+llm = [
+    "openai>=1.30,<4",
+    "xlsxwriter>=3.1,<4",
+]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+]
+
+[project.scripts]
+meshlytics = "meshlytics.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/i3-research/meshlytics"
+Issues = "https://github.com/i3-research/meshlytics/issues"
+Changelog = "https://github.com/i3-research/meshlytics/blob/main/CHANGELOG.md"
+
+[tool.setuptools.dynamic]
+version = { attr = "meshlytics.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+meshlytics = ["essentials/*.json", "essentials/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 140
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B"]
+ignore = ["E501"]

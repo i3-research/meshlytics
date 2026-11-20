@@ -1,0 +1,20 @@
+name: Feature request
+description: Suggest a new analysis or an improvement
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: What would you like to do?
+      description: The analysis or task, and why it matters for your work.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution (optional)
+      description: How it could work, e.g. a new command or option and its output.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you have tried (optional)
